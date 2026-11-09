@@ -1,0 +1,52 @@
+name: Deploy Pages
+
+on:
+  push:
+    branches: [main, blue-design]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          path: src-main
+      - uses: actions/checkout@v4
+        with:
+          ref: blue-design
+          path: src-blue
+      - name: Assemble site
+        run: |
+          mkdir -p _site/blue
+          for dir in src-main:_site src-blue:_site/blue; do
+            from="${dir%%:*}"; to="${dir##*:}"
+            cp -r "$from/index.html" "$from/DESIGN.md" "$from/assets" "$to/"
+            for extra in css js; do
+              if [ -d "$from/$extra" ]; then cp -r "$from/$extra" "$to/"; fi
+            done
+          done
+          touch _site/.nojekyll
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

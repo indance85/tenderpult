@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ТендерПульт — госконтракт под контролем</title>
 <meta name="description" content="Макет главной страницы ТендерПульта">
-<meta name="theme-color" content="#d8f3ad">
+<meta name="theme-color" content="#d9eeff">
 <meta property="og:title" content="ТендерПульт — госконтракт под контролем">
 <meta property="og:description" content="Разберитесь в работах, организуйте команду и готовьте документы по ходу стройки. Всё по контракту — в одной системе.">
 <meta property="og:type" content="website">
@@ -15,19 +15,24 @@
 <body>
 <svg class="defs" aria-hidden="true" focusable="false">
   <defs>
-    <linearGradient id="lime" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6f8c2"/><stop offset=".45" stop-color="#b9e668"/><stop offset="1" stop-color="#7ba65a"/></linearGradient>
-    <linearGradient id="limeDark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7ba65a"/><stop offset="1" stop-color="#3f6e31"/></linearGradient>
-    <linearGradient id="deep" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b6a50"/><stop offset="1" stop-color="#17362d"/></linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6f4ff"/><stop offset=".45" stop-color="#6cc4ff"/><stop offset="1" stop-color="#2f7fe0"/></linearGradient>
+    <linearGradient id="skyDark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f7fe0"/><stop offset="1" stop-color="#0b5bb5"/></linearGradient>
+    <linearGradient id="deep" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8fb0e0"/><stop offset="1" stop-color="#0f368a"/></linearGradient>
     <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-    <pattern id="iso-hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0v9" stroke="#b9e668" stroke-opacity=".6" stroke-width="1.6"/></pattern>
+    <pattern id="iso-hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0v9" stroke="#6cc4ff" stroke-opacity=".6" stroke-width="1.6"/></pattern>
     <pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0v10" stroke="currentColor" stroke-width="2"/></pattern>
+    <filter id="ink" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" seed="7" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -4.4 3.3" result="m"/><feComposite in="SourceGraphic" in2="m" operator="in"/></filter>
+    <path id="ring" d="M100 100m-74 0a74 74 0 1 1 148 0a74 74 0 1 1-148 0"/>
   </defs>
+  <symbol id="stamp-done" viewBox="0 0 200 200"><g filter="url(#ink)" fill="#d52b1e" font-family="Onest,Arial,sans-serif" font-weight="700" text-anchor="middle"><circle cx="100" cy="100" r="94" fill="none" stroke="#d52b1e" stroke-width="5"/><circle cx="100" cy="100" r="60" fill="none" stroke="#d52b1e" stroke-width="2.5"/><text font-size="17"><textPath href="#ring" startOffset="0" textLength="458" text-anchor="start">ТЕНДЕРПУЛЬТ • ТЕНДЕРПУЛЬТ •</textPath></text><text x="100" y="106" font-size="16">ВЫПОЛНЕНО</text></g></symbol>
+  <symbol id="stamp-control" viewBox="0 0 200 200"><g filter="url(#ink)" fill="#d52b1e" font-family="Onest,Arial,sans-serif" font-weight="700" text-anchor="middle"><circle cx="100" cy="100" r="94" fill="none" stroke="#d52b1e" stroke-width="5"/><circle cx="100" cy="100" r="60" fill="none" stroke="#d52b1e" stroke-width="2.5"/><text font-size="15"><textPath href="#ring" startOffset="0" textLength="458" text-anchor="start">СИСТЕМА ДЛЯ ПОДРЯДЧИКОВ • 44-ФЗ •</textPath></text><text x="100" y="97" font-size="20">ПОД</text><text x="100" y="116" font-size="15">КОНТРОЛЕМ</text></g></symbol>
+  <symbol id="stamp-key" viewBox="0 0 200 200"><g filter="url(#ink)" fill="#d52b1e" font-family="Onest,Arial,sans-serif" font-weight="700" text-anchor="middle"><circle cx="100" cy="100" r="94" fill="none" stroke="#d52b1e" stroke-width="5"/><circle cx="100" cy="100" r="60" fill="none" stroke="#d52b1e" stroke-width="2.5"/><text font-size="15"><textPath href="#ring" startOffset="0" textLength="458" text-anchor="start">ОДИН КЛЮЧ — ОДИН КОНТРАКТ •</textPath></text><text x="100" y="96" font-size="14">ПЕРВЫЙ КЛЮЧ</text><text x="100" y="116" font-size="15">В ПОДАРОК</text></g></symbol>
   <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="5"/><path d="m11.6 11.4 8.9-8.9M16 7l3.5 3.5M12.8 10.2l2.7 2.7"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 5 5 10-11"/></symbol>
   <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
   <symbol id="art-key" viewBox="0 0 320 140">
-    <g fill="url(#limeDark)" transform="translate(7 9)"><path fill-rule="evenodd" d="M62 12a52 52 0 0 1 49 35h187c6 0 10 4 10 10v18c0 6-4 10-10 10h-14v22c0 5-4 9-9 9h-12c-5 0-9-4-9-9V85h-14v14c0 5-4 9-9 9h-12c-5 0-9-4-9-9V85h-99a52 52 0 1 1-49-73Zm0 32a20 20 0 1 0 0 40 20 20 0 0 0 0-40Z"/></g>
-    <path fill="url(#lime)" fill-rule="evenodd" d="M62 12a52 52 0 0 1 49 35h187c6 0 10 4 10 10v18c0 6-4 10-10 10h-14v22c0 5-4 9-9 9h-12c-5 0-9-4-9-9V85h-14v14c0 5-4 9-9 9h-12c-5 0-9-4-9-9V85h-99a52 52 0 1 1-49-73Zm0 32a20 20 0 1 0 0 40 20 20 0 0 0 0-40Z"/>
+    <g fill="url(#skyDark)" transform="translate(7 9)"><path fill-rule="evenodd" d="M62 12a52 52 0 0 1 49 35h187c6 0 10 4 10 10v18c0 6-4 10-10 10h-14v22c0 5-4 9-9 9h-12c-5 0-9-4-9-9V85h-14v14c0 5-4 9-9 9h-12c-5 0-9-4-9-9V85h-99a52 52 0 1 1-49-73Zm0 32a20 20 0 1 0 0 40 20 20 0 0 0 0-40Z"/></g>
+    <path fill="url(#sky)" fill-rule="evenodd" d="M62 12a52 52 0 0 1 49 35h187c6 0 10 4 10 10v18c0 6-4 10-10 10h-14v22c0 5-4 9-9 9h-12c-5 0-9-4-9-9V85h-14v14c0 5-4 9-9 9h-12c-5 0-9-4-9-9V85h-99a52 52 0 1 1-49-73Zm0 32a20 20 0 1 0 0 40 20 20 0 0 0 0-40Z"/>
     <path fill="url(#shine)" d="M118 53h176c3 0 5 2 5 5v3H116Z"/>
     <path fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="4" stroke-linecap="round" d="M26 50a40 40 0 0 1 34-27"/>
   </symbol>
@@ -63,22 +68,25 @@
     <div class="hero-bg" aria-hidden="true"><div class="hero-grid"></div><div class="hero-glow"></div></div>
 
     <div class="fl fl-helmet" aria-hidden="true" data-depth="26" data-speed="-150"><div>
-      <svg viewBox="0 0 200 150"><path fill="url(#limeDark)" d="M12 112c28 18 148 18 176 0 5-8-3-16-14-16H26c-11 0-19 8-14 16Z"/><path fill="url(#lime)" d="M30 100c0-56 32-80 70-80s70 24 70 80Z"/><path fill="#e6f8c2" d="M84 22c6-3 26-3 32 0l4 78H80Z"/><path fill="#17362d" fill-opacity=".22" d="M30 88h140v12H30Z"/><path fill="url(#shine)" d="M47 80c3-22 16-39 31-46-11 14-17 30-19 48Z"/></svg>
+      <svg viewBox="0 0 200 150"><path fill="url(#skyDark)" d="M12 112c28 18 148 18 176 0 5-8-3-16-14-16H26c-11 0-19 8-14 16Z"/><path fill="url(#sky)" d="M30 100c0-56 32-80 70-80s70 24 70 80Z"/><path fill="#e6f4ff" d="M84 22c6-3 26-3 32 0l4 78H80Z"/><path fill="#0f368a" fill-opacity=".22" d="M30 88h140v12H30Z"/><path fill="url(#shine)" d="M47 80c3-22 16-39 31-46-11 14-17 30-19 48Z"/></svg>
     </div></div>
     <div class="fl fl-doc" aria-hidden="true" data-depth="-20" data-speed="-210"><div>
-      <svg viewBox="0 0 170 214"><path fill="#fff" d="M18 8h100l34 34v164H18Z"/><path fill="#dce9d5" d="m118 8 34 34h-34Z"/><g fill="#dce4d8"><rect x="36" y="58" width="96" height="9" rx="4"/><rect x="36" y="78" width="96" height="9" rx="4"/><rect x="36" y="98" width="66" height="9" rx="4"/></g><rect x="36" y="30" width="58" height="12" rx="6" fill="#294a38"/><path fill="none" stroke="#294a38" stroke-width="3" stroke-linecap="round" d="M38 170c10-16 16-20 18-12s-6 18 2 14 14-20 18-12 8 8 18 2"/><circle cx="122" cy="166" r="24" fill="url(#lime)"/><path fill="none" stroke="#17362d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="m111 166 8 9 15-17"/></svg>
+      <svg viewBox="0 0 170 214"><path fill="#fff" d="M18 8h100l34 34v164H18Z"/><path fill="#dbe6f5" d="m118 8 34 34h-34Z"/><g fill="#d6e0ee"><rect x="36" y="58" width="96" height="9" rx="4"/><rect x="36" y="78" width="96" height="9" rx="4"/><rect x="36" y="98" width="66" height="9" rx="4"/></g><rect x="36" y="30" width="58" height="12" rx="6" fill="#1a4aa8"/><path fill="none" stroke="#1a4aa8" stroke-width="3" stroke-linecap="round" d="M38 170c10-16 16-20 18-12s-6 18 2 14 14-20 18-12 8 8 18 2"/><g fill="none" stroke="#d52b1e" filter="url(#ink)"><circle cx="122" cy="166" r="26" stroke-width="3.5"/><circle cx="122" cy="166" r="20" stroke-width="1.5"/><path stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="m112 166 8 9 14-17"/></g></svg>
     </div></div>
     <div class="fl fl-key" aria-hidden="true" data-depth="34" data-speed="-90"><div><svg viewBox="0 0 320 140"><use href="#art-key"/></svg></div></div>
     <div class="fl fl-tape" aria-hidden="true" data-depth="-30" data-speed="-120"><div>
-      <svg viewBox="0 0 230 170"><rect x="124" y="118" width="100" height="24" rx="3" fill="#f4f5ed"/><g stroke="#294a38" stroke-width="2.4"><path d="M138 118v10M150 118v6M162 118v10M174 118v6M186 118v10M198 118v6M210 118v10"/></g><rect x="218" y="112" width="8" height="36" rx="2" fill="#b9e668"/><rect x="10" y="16" width="142" height="142" rx="36" fill="url(#limeDark)"/><rect x="6" y="10" width="142" height="142" rx="36" fill="url(#lime)"/><circle cx="77" cy="81" r="44" fill="#17362d"/><circle cx="77" cy="81" r="30" fill="#294a38"/><circle cx="77" cy="81" r="12" fill="#b9e668"/><path fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="4" stroke-linecap="round" d="M22 66c2-20 16-37 34-41"/></svg>
+      <svg viewBox="0 0 230 170"><rect x="124" y="118" width="100" height="24" rx="3" fill="#f3f6fb"/><g stroke="#1a4aa8" stroke-width="2.4"><path d="M138 118v10M150 118v6M162 118v10M174 118v6M186 118v10M198 118v6M210 118v10"/></g><rect x="218" y="112" width="8" height="36" rx="2" fill="#6cc4ff"/><rect x="10" y="16" width="142" height="142" rx="36" fill="url(#skyDark)"/><rect x="6" y="10" width="142" height="142" rx="36" fill="url(#sky)"/><circle cx="77" cy="81" r="44" fill="#0f368a"/><circle cx="77" cy="81" r="30" fill="#1a4aa8"/><circle cx="77" cy="81" r="12" fill="#6cc4ff"/><path fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="4" stroke-linecap="round" d="M22 66c2-20 16-37 34-41"/></svg>
     </div></div>
+
+    <div class="stamp-hero" aria-hidden="true"><svg viewBox="0 0 200 200"><use href="#stamp-control"/></svg></div>
 
     <div class="wrap">
       <p class="pill rise"><span>Система для подрядчиков по&nbsp;<span class="nowrap">44-ФЗ</span></span></p>
       <h1><span class="ln"><span style="--i:1">Госконтракт</span></span> <span class="ln"><span style="--i:2">под контролем.</span></span> <span class="ln l3"><span style="--i:3">От сметы до сдачи.</span></span></h1>
+      <div class="dim" id="dim" aria-hidden="true"><i class="dim-line"></i><i class="dim-end a"></i><i class="dim-end b"></i></div>
       <p class="lead rise" style="--i:5">Разберитесь в&nbsp;работах, организуйте команду и&nbsp;готовьте документы по&nbsp;ходу стройки. Всё по&nbsp;контракту&nbsp;— в&nbsp;одной системе.</p>
       <div class="hero-cta rise" style="--i:6">
-        <a class="btn btn-lime" href="https://tenderpult.ru/app/register/"><svg class="icon" aria-hidden="true"><use href="#i-key"/></svg>Получить первый ключ</a>
+        <a class="btn btn-accent" href="https://tenderpult.ru/app/register/"><svg class="icon" aria-hidden="true"><use href="#i-key"/></svg>Получить первый ключ</a>
         <p class="note"><strong>Первый контракт&nbsp;— в&nbsp;подарок.</strong><br>Один ключ на&nbsp;один контракт.</p>
       </div>
       <ul class="assure rise" style="--i:7">
@@ -123,6 +131,7 @@
     <div class="wrap">
       <p class="pill">Когда контракт подписан</p>
       <p class="intro-text" data-words>Строить&nbsp;— ваша работа. Разобраться в&nbsp;контракте, организовать процесс и&nbsp;подготовить документы поможет ТендерПульт.</p>
+      <div class="bp on-dark" aria-hidden="true"><svg id="bp" viewBox="0 0 1240 316"></svg></div>
     </div>
   </section>
 
@@ -137,10 +146,10 @@
           <svg class="step-art" viewBox="0 0 280 104" aria-hidden="true"><g class="key-swing"><use href="#art-key" x="6" y="10" width="194" height="85"/></g></svg>
           <h3>Получите ключ</h3><p>Зарегистрируйтесь&nbsp;— первый ключ на&nbsp;один контракт будет в&nbsp;подарок.</p></li>
         <li class="step"><div class="step-mark"><span class="step-num">02</span><span>Контракт</span></div>
-          <svg class="step-art" viewBox="0 0 280 104" aria-hidden="true"><rect x="2" y="20" width="276" height="64" rx="16" fill="#f4f5ed" stroke="#dce4d8" stroke-width="2"/><g fill="#172820"><circle class="sd" cx="30" cy="52" r="5.5"/><circle class="sd" cx="52" cy="52" r="5.5"/><circle class="sd" cx="74" cy="52" r="5.5"/><circle class="sd" cx="96" cy="52" r="5.5"/><circle class="sd" cx="118" cy="52" r="5.5"/><circle class="sd" cx="140" cy="52" r="5.5"/><circle class="sd" cx="162" cy="52" r="5.5"/><circle class="sd" cx="184" cy="52" r="5.5"/></g><rect class="caret" x="200" y="36" width="3" height="32" rx="1.5" fill="#7bad40"/><circle cx="248" cy="52" r="17" fill="url(#lime)"/><path d="m243 44 8 8-8 8" fill="none" stroke="#17362d" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="step-art" viewBox="0 0 280 104" aria-hidden="true"><rect x="2" y="20" width="276" height="64" rx="16" fill="#f3f6fb" stroke="#d6e0ee" stroke-width="2"/><g fill="#0b1f4b"><circle class="sd" cx="30" cy="52" r="5.5"/><circle class="sd" cx="52" cy="52" r="5.5"/><circle class="sd" cx="74" cy="52" r="5.5"/><circle class="sd" cx="96" cy="52" r="5.5"/><circle class="sd" cx="118" cy="52" r="5.5"/><circle class="sd" cx="140" cy="52" r="5.5"/><circle class="sd" cx="162" cy="52" r="5.5"/><circle class="sd" cx="184" cy="52" r="5.5"/></g><rect class="caret" x="200" y="36" width="3" height="32" rx="1.5" fill="#2f7fe0"/><circle cx="248" cy="52" r="17" fill="url(#sky)"/><path d="m243 44 8 8-8 8" fill="none" stroke="#0f368a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <h3>Введите номер закупки</h3><p>Система получит данные контракта и&nbsp;подготовит список работ из&nbsp;сметы.</p></li>
         <li class="step"><div class="step-mark"><span class="step-num">03</span><span>Подготовка</span></div>
-          <svg class="step-art" viewBox="0 0 280 104" aria-hidden="true"><g class="ck"><circle cx="16" cy="18" r="13" fill="#d8f3ad"/><path d="m10 18 5 5 8-9" fill="none" stroke="#3f6e31" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="42" y="12" width="190" height="12" rx="6" fill="#dce9d5"/></g><g class="ck"><circle cx="16" cy="52" r="13" fill="#d8f3ad"/><path d="m10 52 5 5 8-9" fill="none" stroke="#3f6e31" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="42" y="46" width="150" height="12" rx="6" fill="#dce9d5"/></g><g class="ck"><circle cx="16" cy="86" r="13" fill="url(#lime)"/><path d="m10 86 5 5 8-9" fill="none" stroke="#17362d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="42" y="80" width="214" height="12" rx="6" fill="#b9e668"/></g></svg>
+          <svg class="step-art" viewBox="0 0 280 104" aria-hidden="true"><g class="ck"><circle cx="16" cy="18" r="13" fill="#d9eeff"/><path d="m10 18 5 5 8-9" fill="none" stroke="#0b5bb5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="42" y="12" width="190" height="12" rx="6" fill="#dbe6f5"/></g><g class="ck"><circle cx="16" cy="52" r="13" fill="#d9eeff"/><path d="m10 52 5 5 8-9" fill="none" stroke="#0b5bb5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="42" y="46" width="150" height="12" rx="6" fill="#dbe6f5"/></g><g class="ck"><circle cx="16" cy="86" r="13" fill="url(#sky)"/><path d="m10 86 5 5 8-9" fill="none" stroke="#0f368a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="42" y="80" width="214" height="12" rx="6" fill="#6cc4ff"/></g></svg>
           <h3>Двигайтесь по&nbsp;шагам</h3><p>Проверьте работы, подключите команду и&nbsp;организуйте подготовку объекта с&nbsp;подсказками Софи.</p></li>
       </ol>
     </div>
@@ -227,11 +236,11 @@
           <g class="net-base"><path class="nl" pathLength="1" d="M70 42C160 42 170 95 260 95"/><path class="nl" pathLength="1" d="M70 148C160 148 170 95 260 95"/><path class="nl" pathLength="1" d="M450 42C360 42 350 95 260 95"/><path class="nl" pathLength="1" d="M450 148C360 148 350 95 260 95"/></g>
           <path class="net-pulse" pathLength="1" d="M70 42C160 42 170 95 260 95"/><path class="net-pulse" pathLength="1" d="M70 148C160 148 170 95 260 95"/><path class="net-pulse" pathLength="1" d="M450 42C360 42 350 95 260 95"/><path class="net-pulse" pathLength="1" d="M450 148C360 148 350 95 260 95"/>
           <g font-family="Onest,Arial,sans-serif" font-weight="600" font-size="20" text-anchor="middle">
-            <g class="nn"><circle cx="70" cy="42" r="30" fill="#dce9d5"/><text x="70" y="49" fill="#3f6040">Р</text></g>
-            <g class="nn"><circle cx="70" cy="148" r="30" fill="#dce9d5"/><text x="70" y="155" fill="#3f6040">П</text></g>
-            <g class="nn"><circle cx="450" cy="42" r="30" fill="#dce9d5"/><text x="450" y="49" fill="#3f6040">С</text></g>
-            <g class="nn"><circle cx="450" cy="148" r="30" fill="#dce9d5"/><text x="450" y="155" fill="#3f6040">Т</text></g>
-            <g class="nh"><rect x="218" y="53" width="84" height="84" rx="24" fill="#1b3d30"/><text x="260" y="109" fill="#c7ec86" font-size="46">т</text></g>
+            <g class="nn"><circle cx="70" cy="42" r="30" fill="#dbe6f5"/><text x="70" y="49" fill="#16458f">Р</text></g>
+            <g class="nn"><circle cx="70" cy="148" r="30" fill="#dbe6f5"/><text x="70" y="155" fill="#16458f">П</text></g>
+            <g class="nn"><circle cx="450" cy="42" r="30" fill="#dbe6f5"/><text x="450" y="49" fill="#16458f">С</text></g>
+            <g class="nn"><circle cx="450" cy="148" r="30" fill="#dbe6f5"/><text x="450" y="155" fill="#16458f">Т</text></g>
+            <g class="nh"><rect x="218" y="53" width="84" height="84" rx="24" fill="#0039a6"/><text x="260" y="109" fill="#ffffff" font-size="46">т</text></g>
           </g>
         </svg>
       </div>
@@ -249,6 +258,7 @@
 
   <section class="panel offer" id="offer">
     <div class="offer-key" aria-hidden="true"><svg viewBox="0 0 320 140"><use href="#art-key"/></svg></div>
+    <div class="stamp-offer" aria-hidden="true"><svg viewBox="0 0 200 200"><use href="#stamp-key"/></svg></div>
     <div class="wrap offer-grid">
       <div>
         <p class="pill">Первый ключ в&nbsp;подарок</p>
@@ -272,7 +282,7 @@
   <p class="wrap ribbon"><strong>Макет для обсуждения.</strong> Экраны системы показаны схематично; перед публикацией их нужно заменить реальными.</p>
 </footer>
 
-<div class="dock" id="dock"><a class="btn btn-lime" href="https://tenderpult.ru/app/register/">Начать бесплатно</a></div>
+<div class="dock" id="dock"><a class="btn" href="https://tenderpult.ru/app/register/">Начать бесплатно</a></div>
 
 <script src="assets/vendor/gsap.min.js"></script>
 <script src="assets/vendor/ScrollTrigger.min.js"></script>
