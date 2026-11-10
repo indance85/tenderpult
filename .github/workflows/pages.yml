@@ -32,7 +32,7 @@ jobs:
           for dir in src-main:_site src-blue:_site/blue; do
             from="${dir%%:*}"; to="${dir##*:}"
             cp -r "$from/index.html" "$from/DESIGN.md" "$from/assets" "$to/"
-            for extra in css js; do
+            for extra in css js cabinet; do
               if [ -d "$from/$extra" ]; then cp -r "$from/$extra" "$to/"; fi
             done
           done

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ТендерПульт · Центр управления</title>
+<meta name="theme-color" content="#0a2a6e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230039a6'/%3E%3Cpath d='M9 10h14v3.4h-5.2V24h-3.6V13.4H9z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/cabinet.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('tenderpult-cabinet-theme')||'night'}catch(e){}</script>
+</head>
+<body>
+<div class="app">
+  <aside class="rail" id="rail" aria-label="Разделы"></aside>
+  <main class="main">
+    <header class="top" id="top"></header>
+    <section class="kpis" aria-label="Показатели компании" id="kpis"></section>
+
+    <div class="seg" role="tablist" aria-label="Что показать">
+      <button type="button" role="tab" data-pane="tasks" aria-selected="true">Задания</button>
+      <button type="button" role="tab" data-pane="map" aria-selected="false">Сроки</button>
+      <button type="button" role="tab" data-pane="card" aria-selected="false">Объект</button>
+    </div>
+
+    <div class="board" data-active="tasks">
+      <section class="panel p-tasks" data-pane-id="tasks" aria-labelledby="h-tasks">
+        <header class="p-head">
+          <h2 id="h-tasks">Нужно сделать</h2>
+          <div class="tabs" role="tablist" aria-label="Очередь заданий" id="queue-tabs">
+            <i class="tabs-ind" aria-hidden="true"></i>
+            <button type="button" role="tab" data-queue="decide" aria-selected="true">Решить <b id="q-decide">0</b></button>
+            <button type="button" role="tab" data-queue="work" aria-selected="false">В работе <b id="q-work">0</b></button>
+          </div>
+        </header>
+        <div class="tasks scroll" id="tasks" tabindex="-1"></div>
+      </section>
+
+      <div class="mid" data-pane-id="map">
+        <section class="panel p-map" aria-labelledby="h-map">
+          <header class="p-head">
+            <div><h2 id="h-map">Контракты и сроки</h2><p class="sub">Шкала показывает время, а не процент выполнения работ</p></div>
+            <button class="chip" id="reset" type="button" hidden>Показать все <svg class="ic"><use href="#i-close"/></svg></button>
+          </header>
+          <div class="tl" id="tl">
+            <div class="tl-axis" id="tl-axis" aria-hidden="true"></div>
+            <div class="tl-canvas">
+              <div class="tl-grid" id="tl-grid" aria-hidden="true"></div>
+              <div class="tl-rows" id="tl-rows"></div>
+            </div>
+          </div>
+          <ul class="legend" aria-label="Обозначения">
+            <li><i class="lg lg-past"></i>Прошло</li><li><i class="lg lg-left"></i>Осталось</li><li><i class="lg lg-hot"></i>До 30 дней</li><li><i class="lg lg-act"></i>Дата АОСР</li><li><i class="lg lg-now"></i>Сегодня</li>
+          </ul>
+        </section>
+        <div class="pair">
+          <section class="panel p-bars" aria-labelledby="h-bars">
+            <header class="p-head"><div><h2 id="h-bars">Завершение по графику</h2><p class="sub">Полная стоимость, без вычета оплат</p></div></header>
+            <div class="bars" id="bars"></div>
+          </section>
+          <section class="panel p-acts" id="acts-panel" aria-labelledby="h-acts">
+            <header class="p-head"><div><h2 id="h-acts">Скоро потребуются АОСР</h2><p class="sub">Дата в ближайшие 30 дней</p></div></header>
+            <div class="acts scroll" id="acts"></div>
+          </section>
+        </div>
+      </div>
+
+      <section class="panel p-card" data-pane-id="card" aria-label="Выбранный контракт"></section>
+    </div>
+  </main>
+</div>
+<script src="../assets/vendor/gsap.min.js"></script>
+<script src="js/core.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/cabinet.js"></script>
+</body>
+</html>
