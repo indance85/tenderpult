@@ -95,30 +95,17 @@
       </ul>
 
       <div class="art rise" style="--i:8">
-        <div class="art-top"><span>Рабочее пространство</span><span><i class="led" aria-hidden="true"></i>Всё по&nbsp;контракту</span></div>
+        <div class="art-top"><span>Личный кабинет</span><span><i class="led" aria-hidden="true"></i>Потяните линию</span></div>
         <div class="tilt">
           <div class="frame">
             <div class="frame-key" aria-hidden="true"><svg viewBox="0 0 320 140"><use href="#art-key"/></svg></div>
-            <div class="window" role="img" aria-label="Иллюстрация рабочего пространства: контракт «Ремонт объекта», работы в плане, документы в работе, объект под контролем">
-              <div class="w-bar"><span class="w-brand">т. тендерпульт</span><span>Контракты / Рабочее пространство</span><i class="led"></i></div>
-              <div class="w-body">
-                <div class="w-side"><span class="on">Обзор</span><span>Работы</span><span>План-график</span><span>Журнал</span><span>Документы</span><span>Команда</span></div>
-                <div class="w-main">
-                  <div class="w-over">Контракт в&nbsp;работе</div>
-                  <div class="w-title">Ремонт объекта</div>
-                  <div class="w-cards">
-                    <div class="w-card">Работы<strong>В плане</strong><em>общая картина</em><i class="mini mini-a"><b></b><b></b><b></b></i></div>
-                    <div class="w-card">Документы<strong>В работе</strong><em>состояние</em><i class="mini mini-b"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></i></div>
-                    <div class="w-card">Объект<strong>Под контролем</strong><em>ход проекта</em><svg class="mini mini-c" viewBox="0 0 150 42" preserveAspectRatio="none"><path pathLength="1" d="M2 34h26l8-22 12 28 10-16h18l9-14 12 22 8-10h43"/></svg></div>
-                  </div>
-                  <div class="w-log">
-                    <div class="w-over">Последние действия</div>
-                    <div class="w-row"><span>Сверка объёмов</span><span class="badge">Выполнено</span></div>
-                    <div class="w-row"><span>Фото скрытых работ</span><span class="badge warn">Требует внимания</span></div>
-                    <div class="w-row"><span>Журнал работ</span><span class="badge">В работе</span></div>
-                  </div>
-                  <p class="w-label">Иллюстрация интерфейса</p>
-                </div>
+            <div class="window">
+              <div class="w-bar" data-side="night"><span class="cmp-name">Синяя тема</span><span class="cmp-name">Светлая тема</span></div>
+              <div class="compare" id="compare">
+                <picture class="cmp-img"><source media="(max-width:640px)" srcset="assets/img/dash-night-m.webp"><img src="assets/img/dash-night.webp" width="1440" height="900" alt="Центр управления ТендерПульт в синей теме: показатели компании, задания и сроки контрактов" draggable="false"></picture>
+                <picture class="cmp-img cmp-top"><source media="(max-width:640px)" srcset="assets/img/dash-day-m.webp"><img src="assets/img/dash-day.webp" width="1440" height="900" alt="Тот же экран в светлой теме" draggable="false"></picture>
+                <input class="cmp-range" type="range" min="0" max="100" value="50" aria-label="Граница между синей и светлой темой">
+                <div class="cmp-line" aria-hidden="true"><i class="cmp-handle"><svg viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg></i></div>
               </div>
             </div>
           </div>

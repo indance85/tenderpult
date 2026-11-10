@@ -24,6 +24,37 @@
     ['hero','offer','foot'].forEach(function(id){io.observe(document.getElementById(id))});
   }
 
+  // Сравнение тем кабинета: линию двигают мышью, пальцем и стрелками
+  var compare=(function(){
+    var box=document.getElementById('compare'),range=box.querySelector('.cmp-range'),bar=box.parentNode.querySelector('.w-bar');
+    var api={stopHint:null,set:set};
+    function set(x){
+      x=Math.max(0,Math.min(100,x));
+      box.style.setProperty('--x',x+'%');
+      range.value=x;
+      bar.dataset.side=x>=50?'night':'day';
+    }
+    function at(e){var r=box.getBoundingClientRect();set((e.clientX-r.left)/r.width*100)}
+    function stop(){if(api.stopHint)api.stopHint()}
+    function end(){box.classList.remove('is-drag')}
+    box.addEventListener('pointerdown',function(e){
+      if(e.button)return;
+      stop();
+      box.setPointerCapture(e.pointerId);
+      box.classList.add('is-drag');
+      if(e.pointerType==='mouse')at(e); // палец может начинать прокрутку страницы
+    });
+    box.addEventListener('pointermove',function(e){if(box.classList.contains('is-drag'))at(e)});
+    box.addEventListener('pointerup',function(e){
+      if(box.classList.contains('is-drag'))at(e);
+      end();
+      range.focus({preventScroll:true}); // после отпускания работают стрелки
+    });
+    box.addEventListener('pointercancel',end);
+    range.addEventListener('input',function(){stop();set(+range.value)});
+    return api;
+  })();
+
   /* Сцены строятся в конечном состоянии: без анимации страница остаётся цельной */
   var scene=buildIso();
   var sheetRows=buildSheet();
@@ -97,10 +128,10 @@
     gsap.utils.toArray('.fl').forEach(function(f){
       gsap.to(f,{y:+f.dataset.speed,rotate:'+=26',scrollTrigger:{trigger:hero,start:'top top',end:'bottom 30%',scrub:.8}});
     });
-    gsap.fromTo('.mini-a b',{scaleX:0},{scaleX:1,stagger:.2,scrollTrigger:{trigger:'.w-cards',start:'top 92%',end:'top 45%',scrub:.5}});
-    gsap.fromTo('.mini-b b',{opacity:.15,scaleY:.4},{opacity:1,scaleY:1,stagger:.12,scrollTrigger:{trigger:'.w-cards',start:'top 92%',end:'top 45%',scrub:.5}});
-    gsap.fromTo('.mini-c path',{strokeDasharray:1,strokeDashoffset:1},{strokeDashoffset:0,scrollTrigger:{trigger:'.w-cards',start:'top 92%',end:'top 45%',scrub:.5}});
-    gsap.from('.w-row',{x:-22,opacity:0,stagger:.3,scrollTrigger:{trigger:'.w-log',start:'top 96%',end:'top 55%',scrub:.5}});
+    var sweep={x:50};
+    var hint=gsap.timeline({scrollTrigger:{trigger:'.compare',start:'top 55%',once:true},defaults:{ease:'power2.inOut'},onUpdate:function(){compare.set(sweep.x)}})
+      .to(sweep,{x:76,duration:.7,delay:.25}).to(sweep,{x:24,duration:1}).to(sweep,{x:50,duration:.7});
+    compare.stopHint=function(){hint.kill();compare.stopHint=null};
     gsap.from('.frame-key',{rotate:-70,scale:.5,scrollTrigger:{trigger:'.art',start:'top 90%',end:'top 25%',scrub:.6}});
 
     if(matchMedia('(hover:hover) and (pointer:fine)').matches){
@@ -110,7 +141,8 @@
         x:gsap.quickTo(d.parentNode,'x',{duration:1.1,ease:'power3'}),depth:+d.parentNode.dataset.depth}});
       hero.addEventListener('pointermove',function(e){
         var r=hero.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;
-        ry(px*7);rx(-py*5);gx(e.clientX-r.left);gy(e.clientY-r.top);
+        if(e.target.closest('.compare')){ry(0);rx(0)}else{ry(px*7);rx(-py*5)}
+        gx(e.clientX-r.left);gy(e.clientY-r.top);
         depth.forEach(function(d){d.x(px*d.depth*2)});
       });
       hero.addEventListener('pointerleave',function(){rx(0);ry(0)});
