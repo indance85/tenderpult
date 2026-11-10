@@ -120,8 +120,7 @@
 
   function heroFx(){
     var hero=document.getElementById('hero');
-    gsap.fromTo('.stamp-hero',{scale:2.6,opacity:0,rotation:10},{scale:1,opacity:.95,rotation:-14,duration:.42,ease:'power4.in',delay:1.15});
-    gsap.to('.stamp-hero',{y:-130,scrollTrigger:{trigger:hero,start:'top top',end:'bottom 30%',scrub:.8}});
+    gsap.fromTo('.promo-stamp',{scale:2.6,opacity:0},{scale:1,opacity:.95,duration:.42,ease:'power4.in',delay:1.15});
     gsap.fromTo('.frame',{rotationX:20,scale:.9},{rotationX:0,scale:1,
       scrollTrigger:{trigger:'.art',start:'top 96%',end:'top 22%',scrub:.6}});
     gsap.to('.hero-grid',{yPercent:12,scrollTrigger:{trigger:hero,start:'top top',end:'bottom top',scrub:true}});

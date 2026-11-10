@@ -137,10 +137,6 @@ h3{font-weight:600;letter-spacing:-.03em;line-height:1.15}
 .w{display:inline-block;overflow:clip;padding-bottom:.16em;margin-bottom:-.16em;vertical-align:top}
 .wi{display:inline-block}
 
-.announce{background:var(--ice);font-size:14px;line-height:1.35}
-.announce .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2px 10px;padding-block:9px;text-align:center}
-.announce strong{display:inline-flex;align-items:center;gap:7px;font-weight:600}
-
 /* Навигация */
 .top{position:sticky;top:10px;z-index:40;margin-block:10px;padding-inline:var(--edge)}
 .top-in{position:relative;max-width:1240px;margin-inline:auto;height:64px;padding:0 10px 0 20px;display:flex;align-items:center;justify-content:space-between;gap:24px;background:var(--white);border-radius:999px;box-shadow:var(--lift)}
@@ -187,9 +183,31 @@ h3{font-weight:600;letter-spacing:-.03em;line-height:1.15}
 .hero h1 .ln>span{display:block;animation:lineup .95s cubic-bezier(.16,1,.3,1) both;animation-delay:calc(var(--i,0)*90ms + 80ms)}
 @keyframes lineup{from{transform:translateY(112%)}to{transform:none}}
 .lead{margin:24px auto 0;max-width:33em;font-size:clamp(17px,1.5vw,20px);line-height:1.5;color:var(--on-dark)}
-.hero-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 22px;margin-top:30px}
-.note{font-size:14px;line-height:1.45;text-align:left;color:var(--on-dark)}
-.note strong{color:var(--white);font-weight:600}
+/* Акция: талон с линией отрыва и печатью */
+.promo{--py:clamp(20px,2vw,26px);--px:clamp(24px,3vw,38px);position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:0 clamp(18px,2.4vw,30px);max-width:980px;margin:30px auto 0;padding:var(--py) var(--px);border-radius:24px;background:var(--white);color:var(--ink);text-align:left;box-shadow:0 0 0 6px rgba(255,255,255,.14),0 26px 60px rgba(3,12,44,.4)}
+.promo-sheen{position:absolute;inset:0;overflow:hidden;border-radius:inherit;pointer-events:none}
+.promo-sheen::before{content:"";position:absolute;top:-20%;bottom:-20%;left:0;width:30%;background:linear-gradient(90deg,transparent,rgba(108,196,255,.24),transparent);transform:translateX(-140%) skewX(-16deg);animation:sheen 6s var(--ease-out) 2s infinite}
+@keyframes sheen{0%{transform:translateX(-140%) skewX(-16deg)}35%,100%{transform:translateX(460%) skewX(-16deg)}}
+.promo-text{position:relative}
+.promo-title{font-size:clamp(28px,2.6vw,36px);font-weight:600;line-height:1.08;letter-spacing:-.04em}
+.promo-title em{font-style:normal;color:var(--red)}
+.promo-sub{margin-top:8px;font-size:clamp(16px,1.35vw,18px);line-height:1.35}
+.promo-sub b{font-weight:600;color:var(--royal)}
+.promo-note{margin-top:4px;font-size:14px;line-height:1.35;color:var(--muted)}
+.promo-stamp{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;width:104px;height:104px;border:3px solid var(--red);border-radius:50%;box-shadow:inset 0 0 0 3px var(--white),inset 0 0 0 5px var(--red);color:var(--red);line-height:1;text-transform:uppercase;rotate:-12deg;filter:url(#ink)}
+.promo-stamp b{font-size:38px;font-weight:700;letter-spacing:-.03em}
+.promo-stamp span{margin-top:2px;font-size:14px;font-weight:700;letter-spacing:.06em}
+.promo-act{position:relative;display:flex;align-items:center;align-self:stretch;padding-left:clamp(18px,2.4vw,30px);border-left:2px dashed #c4d3ea}
+.promo-act::before,.promo-act::after{content:"";position:absolute;left:-14px;width:26px;height:26px;border-radius:50%;background:var(--dark)}
+.promo-act::before{top:calc(var(--py)*-1 - 13px)}
+.promo-act::after{bottom:calc(var(--py)*-1 - 13px)}
+.promo-act .btn{min-height:60px;white-space:nowrap}
+@media(min-width:1081px) and (max-height:760px){
+  .promo{--py:16px;margin-top:20px}
+  .promo-stamp{width:88px;height:88px}
+  .promo-stamp b{font-size:32px}
+  .promo-stamp span{font-size:12px}
+}
 .assure{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 26px;margin-top:24px;font-size:15px;color:var(--on-dark)}
 .assure li{display:flex;align-items:center;gap:8px}
 .assure .icon{color:var(--sky)}
@@ -402,8 +420,24 @@ html:not(.motion) .sheet{opacity:.55;transform:rotate(-2.4deg) scale(.97)}
   .hero h1 .l3{font-size:.86em}
   .panel{border-radius:24px}
   .btn{width:100%}
-  .hero-cta{flex-direction:column;align-items:stretch}
-  .note{text-align:center}
+  .promo{grid-template-columns:minmax(0,1fr);margin-top:24px}
+  .promo-text{padding-right:92px}
+  .promo-stamp{position:absolute;right:16px;top:16px;width:84px;height:84px}
+  .promo-stamp b{font-size:30px}
+  .promo-stamp span{font-size:12px}
+  .promo-act{margin:18px calc(var(--px)*-1) 0;padding:18px var(--px) 0;border-left:0;border-top:2px dashed #c4d3ea}
+  .promo-act::before,.promo-act::after{top:-14px;bottom:auto}
+  .promo-act::before{left:-13px}
+  .promo-act::after{left:auto;right:-13px}
+  .promo-act .btn{white-space:normal}
+  @media(max-width:360px){
+    .promo{--px:20px}
+    .promo-text{padding-right:60px}
+    .promo-title{font-size:24px}
+    .promo-stamp{right:10px;top:12px;width:68px;height:68px}
+    .promo-stamp b{font-size:24px}
+    .promo-stamp span{font-size:10px}
+  }
   .assure{flex-direction:column;align-items:center}
 
   /* Окно интерфейса перестраивается, а не сжимается */
@@ -443,8 +477,7 @@ html:not(.motion) .sheet{opacity:.55;transform:rotate(-2.4deg) scale(.97)}
 @keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes appear{from{opacity:0}to{opacity:1}}
 
-.stamp-hero{position:absolute;z-index:1;right:clamp(150px,17vw,300px);top:548px;width:clamp(104px,10vw,142px);pointer-events:none}
-.stamp-hero svg,.stamp-offer svg{width:100%;height:auto}
+.stamp-offer svg{width:100%;height:auto}
 .stamp-offer{position:absolute;z-index:1;right:30.5vw;top:clamp(18px,2vw,30px);width:clamp(112px,10.6vw,152px);pointer-events:none}
 
 .bp{margin-top:clamp(40px,6vw,72px);padding:clamp(14px,2vw,26px);border-radius:24px;background-color:var(--dark);overflow:hidden;text-align:left}
@@ -464,7 +497,6 @@ html:not(.motion) .sheet{opacity:.55;transform:rotate(-2.4deg) scale(.97)}
 .role b{width:auto;height:auto;border-radius:0;background:var(--ice);color:var(--royal);justify-content:center;padding-inline:0;border-right:2px solid var(--ink);font-size:22px}
 .role strong{border-right:1px solid var(--ink)}
 
-@media(max-width:1180px){.stamp-hero{display:none}}
 @media(max-width:1080px){.stamp-offer{display:none}}
 @media(max-width:640px){
   .role{grid-template-columns:52px minmax(0,1fr)}
